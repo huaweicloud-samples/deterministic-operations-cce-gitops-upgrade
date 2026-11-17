@@ -1,0 +1,32 @@
+# 复制为 terraform.tfvars 并按需修改
+region                  = "cn-north-4"
+cluster_name            = "my-cce-cluster"
+environment             = "dev"
+kubernetes_version      = "1.29"
+upgrade_target_version  = "1.30"
+cluster_flavor          = "cce.s2.medium"
+container_network_type  = "vpc-router"
+node_group_name         = "primary"
+node_flavor             = "c7.xlarge.2"
+node_os                 = "HCE 2.0"
+node_group_min_size     = 2
+node_group_max_size     = 6
+node_group_desired_size = 3
+# 节点 SSH 密钥对名称（在 ECS/KPS 控制台提前创建）
+node_keypair     = "your-keypair"
+argocd_version   = "7.3.11"
+argocd_namespace = "argocd"
+# 你的 GitOps 仓库 fork 地址（Argo CD ApplicationSet 从该仓库读取 cluster-config.yaml）
+gitops_repo_url    = "https://github.com/<your-org>/deterministic-operations-cce-gitops-upgrade.git"
+gitops_repo_branch = "main"
+# 华为云账号名（右上角账号信息），IAM 委托创建必需
+ci_agency_domain = "your-huaweicloud-domain-name"
+
+# GitHub Actions OIDC JWKS 公钥 JSON（可选；来自 https://token.actions.githubusercontent.com/.well-known/jwks，
+# 公开证书非密钥；留空表示暂不启用 OIDC 身份提供商，适用仅手动执行的场景）
+github_oidc_signing_key = ""
+
+# 内网化部署（默认不建 NAT）：外部镜像需先同步到 SWR 后填写
+# argocd_image_repository   = "swr.cn-north-4.myhuaweicloud.com/your-ns/argocd"
+# argocd_image_tag          = "v2.11.3"
+# dns_test_image            = "swr.cn-north-4.myhuaweicloud.com/your-ns/busybox:1.28"

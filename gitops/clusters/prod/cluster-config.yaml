@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prod-cluster-config
+  namespace: argocd
+  labels:
+    environment: prod
+    managed-by: argocd
+data:
+  note: "demo-only-multi-cluster-not-deployed"
+  cluster_name: "eks-prod-cluster"
+  kubernetes_version: "1.28"
+  region: "cn-north-4"
+  environment: "prod"
+  node_group_min_size: "3"
+  node_group_max_size: "10"
+  node_group_desired_size: "5"
+  coredns_version: "1.11.1"
+  kube_proxy_version: "1.30.3"
+  vpc_router_version: "1.18.3"
+  everest_version: "1.33.0"
+  auto_sync: "false"
+  upgrade_window: "maintenance"

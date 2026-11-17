@@ -1,0 +1,8 @@
+data:
+  cluster_name: ""
+  kubernetes_version: "1.32"
+  coredns_version: "1.11.4"
+  kube_proxy_version: "1.32.13"
+  vpc_router_version: "1.23.0"
+  everest_version: "1.65.0"
+  environment: "dev"

@@ -1,0 +1,5 @@
+apiVersion: v2
+name: cce-cluster-addons
+description: Desired-state tracking for cluster add-on versions. ArgoCD manages this ConfigMap as the source of truth; GitHub Actions reads it to drive CCE add-on management calls.
+version: 1.0.0
+type: application
