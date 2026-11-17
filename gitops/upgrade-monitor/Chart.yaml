@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cce-upgrade-monitor
+description: Tracks desired CCE cluster version state for ArgoCD drift detection
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

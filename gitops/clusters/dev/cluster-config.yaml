@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dev-cluster-config
+  namespace: argocd
+  labels:
+    environment: dev
+    managed-by: argocd
+data:
+  cluster_name: "my-cce-cluster"
+  kubernetes_version: "1.29"
+  region: "cn-north-4"
+  environment: "dev"
+  node_group_min_size: "2"
+  node_group_max_size: "4"
+  node_group_desired_size: "2"
+  coredns_version: "1.11.4"
+  kube_proxy_version: "1.32.13"
+  vpc_router_version: "1.23.0"
+  everest_version: "1.65.0"
+  auto_sync: "true"
+  upgrade_window: "weekday"
